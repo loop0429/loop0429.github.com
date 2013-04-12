@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3-demo</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/demo.css" />
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div id="nav-inner" class="navbar-inner">
+<a class="brand" href=".">CSS3-demo</a>
+</div>
+</div>
+
+<div id="container" class="container-fluid">
+<div class="row-fluid">
+
+<div id="navbar" class="span2 bs-docs-sidebar">
+<div class="dropdown">
+<ul id="menu" class="nav nav-list span2">
+<li><a tabindex="-1" href="#br">border-radius</a></li>
+<li><a tabindex="-1" href="#bs">box-shadow</a></li>
+<li><a tabindex="-1" href="#ts">text-shadow</a></li>
+<li><a tabindex="-1" href="#gr">gradient</a></li>
+<li><a tabindex="-1" href="#bg">background-size</a></li>
+<li><a tabindex="-1" href="#bsg">box-sizing</a></li>
+<li><a tabindex="-1" href="#fb">flex-box</a></li>
+<li><a tabindex="-1" href="#ap">appearance</a></li>
+</ul>
+</div>
+
+</div>
+
+<div id="main" class="span10">
+<h2 id="br">border-radius</h2>
+
+<div class="border-radius">角丸</div>
+
+<pre>
+.border-radius {
+  border-radius: 4px;
+}
+</pre>
+
+<div class="border-radius border-radius2"></div>
+
+<p>角ごとに個別に設定することも可能。<br />
+border-radius:左上 右上 右下 左下</p>
+
+<pre>
+.border-radius {
+  border-radius: 4px 10px 6px 23px;
+}
+</pre>
+
+<div class="border-radius border-radius3"></div>
+
+<p>border-raidusに50%を指定すると、円を描くことが出来る。</p>
+
+<pre>
+.border-radius {
+  border-radius: 50%;
+}
+</pre>
+
+
+<h2 id="bs">box-shadow</h2>
+
+<div class="border-radius box-shadow">
+ドロップシャドウ
+</div>
+
+<pre>
+.box-shadow {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.32);
+}
+</pre>
+
+<div class="border-radius box-shadow2">
+内側
+</div>
+
+<pre>
+.box-shadow2 {
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.32);
+}
+</pre>
+
+<div class="border-radius box-shadow3">
+複数指定
+</div>
+
+<pre>
+.box-shadow3 {
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.32), 2px 2px 10px #F00, 6px 6px 10px #00F;
+}
+</pre>
+
+<div class="boudle-line">
+二重線引くテクニック
+</div>
+
+<pre>
+.boudle-line {
+  border-bottom: 1px solid #0F0;
+  box-shadow: 0 1px 0 #F00;
+}
+</pre>
+
+<h2 id="ts">text-shadow</h2>
+
+<div class="text-shadow">
+てきすとしゃどうアリだと文字がはっきりする
+</div>
+
+<pre>
+.text-shadow {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+</pre>
+
+<h2 id="gr">gradient</h2>
+
+<div class="border-radius gradient">
+<span>あの虹色がCSSで再現できる</span>
+</div>
+
+
+<pre>
+.gradient {
+  background: #ff0000;
+  background: -moz-linear-gradient(top,  #ff0000 0%, #ff00ff 15%, #0000ff 33%, #00ffff 48%, #00ff00 67%, #ffff00 84%, #ff0000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0000), color-stop(15%,#ff00ff), color-stop(33%,#0000ff), color-stop(48%,#00ffff), color-stop(67%,#00ff00), color-stop(84%,#ffff00), color-stop(100%,#ff0000));
+  background: -webkit-linear-gradient(top,  #ff0000 0%,#ff00ff 15%,#0000ff 33%,#00ffff 48%,#00ff00 67%,#ffff00 84%,#ff0000 100%);
+  background: -o-linear-gradient(top,  #ff0000 0%,#ff00ff 15%,#0000ff 33%,#00ffff 48%,#00ff00 67%,#ffff00 84%,#ff0000 100%);
+  background: -ms-linear-gradient(top,  #ff0000 0%,#ff00ff 15%,#0000ff 33%,#00ffff 48%,#00ff00 67%,#ffff00 84%,#ff0000 100%);
+  background: linear-gradient(to bottom,  #ff0000 0%,#ff00ff 15%,#0000ff 33%,#00ffff 48%,#00ff00 67%,#ffff00 84%,#ff0000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff0000',GradientType=0 );
+}
+</pre>
+
+<h2 id="bg">background-size</h2>
+
+<p><strong>いい例</strong></p>
+<div class="background-size1"></div>
+
+<pre>
+.background-size {
+  background: url(../img/bg@2x.gif) no-repeat center center; /* bg@2x.gifの画像サイズ(640*160) */
+  -moz-background-size: 320px auto;
+  -webkit-background-size: 320px auto;
+  -o-background-size: 320px auto;
+  -ms-background-size: 320px auto;
+  background-size: 320px auto;
+}
+</pre>
+
+<p>autoを入力すると、どちらかで指定したサイズと同じ倍率に合わせて拡大・縮小してくれる。</p>
+
+<p><strong>悪い例</strong></p>
+<div class="background-size2"></div>
+
+<pre>
+.background-size {
+  -moz-background-size: 320px auto;
+  -webkit-background-size: 320px auto;
+  -o-background-size: 320px auto;
+  -ms-background-size: 320px auto;
+  background-size: 320px auto;
+  background: url(../img/bg@2x.gif) no-repeat center center;
+}
+</pre>
+
+<p>
+Safari以外では、background-sizeの値がbackgroundで上書きされてしまう。<br />
+一番確実なのはbackgroundをまとめて記述しないこと。
+</p>
+
+<pre>
+.background-size {
+  background-image: url(../img/bg@2x.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -moz-background-size: 320px auto;
+  -webkit-background-size: 320px auto;
+  -o-background-size: 320px auto;
+  -ms-background-size: 320px auto;
+  background-size: 320px auto;
+}
+</pre>
+
+<p><strong>ちなみに2倍のサイズで書き出してないと、こんなにも画像の見え方が違う</strong></p>
+
+<p><img src="img/miso.png"></p>
+
+<h2 id="bsg">box-sizing</h2>
+
+<div class="w400">400px</div>
+
+<div class="box-sizing">box-sizing指定あり。<br />width:400px/padding:50px/border:1px/box-sizing:border-box</div>
+<div class="no">box-sizing指定なし。<br />width:400px/padding:50px/border:1px</div>
+<div class="no w298">box-sizing指定なし。<br />width:298px/padding:50px/border:1px<br />今までは計算めんどくさかった</div>
+
+<pre>
+.background-size {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</pre>
+
+<h2 id="fb">flex-box</h2>
+
+<p>float:leftしなくても、自動で横並びになる。</p>
+
+<nav class="flex-box flex-box1">
+<ul>
+<li><a href="#br">border-radius</a></li>
+<li><a href="#bs">box-shadow</a></li>
+<li><a href="#ts">text-shadow</a></li>
+<li><a href="#gr">gradient</a></li>
+</ul>
+</nav>
+
+<pre>
+nav.flex-box ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-box;
+  display: box;
+}
+</pre>
+
+<p>display: box;を指定した子要素にbox-flexを指定すると自動で幅を埋めてくれる。</p>
+
+<nav class="flex-box flex-box2">
+<ul>
+<li><a href="#br">border-radius</a></li>
+<li><a href="#bs">box-shadow</a></li>
+<li><a href="#ts">text-shadow</a></li>
+<li><a href="#gr">gradient</a></li>
+</ul>
+</nav>
+
+<pre>
+nav.flex-box ul li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+</pre>
+
+<p>同じフレックスボックス同士で、高さも自動で揃えてくれる。</p>
+
+<nav class="flex-box flex-box2 flex-box3">
+<ul>
+<li><a href="#br">border-radius</a></li>
+<li><a href="#bs">box-<br />sha<br />dow</a></li>
+<li><a href="#ts">text-shadow</a></li>
+<li><a href="#gr">gradient</a></li>
+</ul>
+</nav>
+
+<p>今まで紹介したのを合わせると、画像を使わず簡単なナビゲーションは作れる。</p>
+
+<nav class="menu">
+<ul>
+<li><a href="#br">border-radius</a></li>
+<li><a href="#bs">box-shadow</a></li>
+<li><a href="#ts">text-shadow</a></li>
+<li><a href="#gr">gradient</a></li>
+</ul>
+</nav>
+
+<h2 id="ap">appearance</h2>
+
+<ul class="appearance">
+<li class="a-button">button</li>
+<li class="a-checkbox">checkbox</li>
+</ul>
+
+<button class="a-none">button要素をCSSで装飾</button>
+
+<pre>
+.appearance {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+</pre>
+
+</div>
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('#navbar').scrollspy();
+</script>
+</body>
+</html>
